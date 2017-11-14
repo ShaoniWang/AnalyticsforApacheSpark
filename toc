@@ -1,0 +1,51 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="AnalyticsforApacheSpark" audience="service" href="/docs/services/AnalyticsforApacheSpark/index.html"}
+Apache Spark
+
+    {: .navgroup id="learn"}
+    about_apache_spark.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    rellinks.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    index.md
+
+    {: .topicgroup}
+    Using Cloud Object Storage (S3 API)
+        cloud_object_storage.md
+
+    {: .topicgroup}
+    Using Cloud Object Storage (Swift API)
+        using_object_storage.md
+        reusing_existing_bluemix_object_storage.md
+        ReusingObjectStorageOnExternalSoftLayer.md
+
+    {: .topicgroup}
+    Using spark-submit
+        using_spark-submit.md
+        spark-submit_properties.md
+        spark_app_example.md
+        file_path_example.md
+        spark_environment_example.md
+        spark_submit_example.md
+
+    {: .topicgroup}
+    Using Spark Interactive API
+        spark_interactive_api.md
+        running_spark_interactive_api_app.md
+        spark_interactive_api_requirements.md
+        using_spark_interactive_api.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    ts_determine_active_kernel_number.md
+    ts_spark_script_updated.md
+    ts_faq_res-ent-plan.md
+    ts_index.md
+
+    {: .navgroup-end}
