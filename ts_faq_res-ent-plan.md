@@ -18,23 +18,23 @@ lastupdated: "2017-09-21"
 ## Is the provisioned Spark cluster shared with other users? How is the multi-tenant cluster managed to avoid impact on workloads?
 
 The Spark Service cluster is a shared multi-tenant cluster. Reserved
-Enterprise Plan tenants have a claim on their resources, and priority
-over Personal-Free Plan tenants in the following ways:
+Enterprise plan tenants have a claim on their resources, and priority
+over Lite plan tenants in the following ways:
 
-1.  Reserved Enterprise plan tenants have priority over Personal-Free
+1.  Reserved Enterprise plan tenants have priority over Lite
     plan tenants in resources, job scheduling, and so on.
-2.  Reserved Enterprise Plan tenants have their own job scheduling,
-    separate from Personal-Free Plan tenants. This means faster
-    performance, with no contention or conflict with Personal-Free Plan
+2.  Reserved Enterprise plan tenants have their own job scheduling,
+    separate from Lite plan tenants. This means faster
+    performance, with no contention or conflict with Lite plan
     tenants.
 3.  Using cloud services ensures that sufficient capacity is available
     to all tenants, such that in practice a reallocation of resources
     should rarely be required.
 
-Reserved Enterprise Plan tenants each get a Spark cluster with
+Reserved Enterprise plan tenants each get a Spark cluster with
 guaranteed capacity – memory and CPU cores – as follows:
 
-  - Reserved Enterprise Plan tenants get 16 GB driver memory. The
+  - Reserved Enterprise plan tenants get 16 GB driver memory. The
     language runtimes also get memory on top of this. For example,
     Python runtime gets 48 GB of memory.
   - Each Spark job can run at most 150 Spark tasks in parallel, with a
