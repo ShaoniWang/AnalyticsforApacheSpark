@@ -30,7 +30,7 @@ To use the data in an existing external Object Storage instance in your applicat
 2.  To configure access to the external Object Storage account and enable loading data from this Object Storage to your application, copy the following lines of code:
 
     ```
-    !pip install --user ibmos2spark
+    !pip install ibmos2spark
     import ibmos2spark
     # Enter the credentials to your Softlayer Object Storage
     auth_url = 'xxx'
