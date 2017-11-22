@@ -83,14 +83,14 @@ your Spark application:
 
         The following example shows you how to fetch your data from Cloud Object Storage.
 
-        Notice that the URI for the input data set use the `s3d` prefix.
+        Notice that the URI for the input data set use the `cos` prefix.
         This indicates that the Cloud Object Storage connector is to be used to access the data in Cloud Object Storage.
 
         ```
         # Example fetching file from Cloud Object Storage
         # Input: a text file
         file_url = cos.url(file_name, bucket_name)
-        # file_url will be "s3d://my_bucket.service/myText.txt"
+        # file_url will be "cos://my_bucket.service/myText.txt"
         inputDataset = sc.textFile(inputDataset)
         ```
 
