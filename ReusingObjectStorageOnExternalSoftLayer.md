@@ -30,7 +30,7 @@ To use the data in an existing external Object Storage instance in your applicat
 2.  To configure access to the external Object Storage account and enable loading data from this Object Storage to your application, copy the following lines of code:
 
     ```
-    !pip install ibmos2spark
+    !pip install --user ibmos2spark
     import ibmos2spark
     # Enter the credentials to your Softlayer Object Storage
     auth_url = 'xxx'
@@ -42,6 +42,8 @@ To use the data in an existing external Object Storage instance in your applicat
     ```
 
     Enter the values for `auth_url`, `tenant`, `username`, and `password` from your SoftLayer account. The value of `configuration_name` can be any value you choose for your configuration.
+
+    **Note:** You cannot use the `--user` option in pip install commands in IBM Analytics Engine.
 
 3.  Invoke the Object Storage account function by running the following code in a cell:
     ```

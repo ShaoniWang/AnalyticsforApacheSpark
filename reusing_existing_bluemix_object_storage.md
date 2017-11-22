@@ -27,7 +27,7 @@ To use the data in an existing Object Storage instance on {{site.data.keyword.Bl
 2.  To access this existing Object Storage account in  {{site.data.keyword.Bluemix_notm}} and load data to your application, copy the following lines of code, including the Object Storage credentials. For example:
 
     ```
-    !pip install ibmos2spark
+    !pip install --user ibmos2spark
     import ibmos2spark
     credentials = {
      "auth_url": "https://identity.open.softlayer.com",
@@ -44,6 +44,8 @@ To use the data in an existing Object Storage instance on {{site.data.keyword.Bl
     bmos = ibmos2spark.bluemix(sc, credentials, "json")
     ```
     `sc` is the SparkContext instance.
+
+    **Note:** You cannot use the `--user` option in pip install commands in IBM Analytics Engine.
 
 3.  Load data from the existing Object Storage as follows:
 

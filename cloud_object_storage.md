@@ -61,7 +61,7 @@ your Spark application:
         import ibmos2spark
 
         credentials = {
-          'endpoint': 'https://s3-api.objectstorage.softlayer.net/',  
+          'endpoint': 'https://s3-api.us-geo.objectstorage.service.networklayer.com'
           # just an example. Your url might be different
           'access_key': '',
           'secret_key': ''
@@ -73,9 +73,8 @@ your Spark application:
         file_name = 'myText.txt'
         ```
 
-        Note:
-
-          - The endpoint should be the private endpoint for Dallas.
+        **Note:**
+          - Choose the correct PRIVATE endpoint from the following [list](https://ibm-public-cos.github.io/crs-docs/endpoints).
           - The access key and secret key are the service credential
             values you obtained in an earlier step.
           - To access data in IBM Cloud Object Storage, you need Spark 2.0 or higher.
