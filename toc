@@ -16,7 +16,7 @@ Apache Spark
     index.md
 
     {: .topicgroup}
-    Using Cloud Object Storage (S3 API)
+    Using Cloud Object Storage (COS API)
         cloud_object_storage.md
 
     {: .topicgroup}
