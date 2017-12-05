@@ -67,7 +67,8 @@ your Spark application:
           'secret_key': ''
         }
 
-        cos = ibmos2spark.CloudObjectStorage(sc, credentials)  #sc is the SparkContext instance
+        cos = ibmos2spark.CloudObjectStorage(sc, credentials)
+        #sc is the SparkContext instance
 
         bucket_name = 'my_bucket'
         file_name = 'myText.txt'
@@ -91,7 +92,7 @@ your Spark application:
         # Input: a text file
         file_url = cos.url(file_name, bucket_name)
         # file_url will be "cos://my_bucket.service/myText.txt"
-        inputDataset = sc.textFile(inputDataset)
+        inputDataset = sc.textFile(file_url)
         ```
 
     3.  Submit the application.
