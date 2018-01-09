@@ -45,6 +45,7 @@ Apache Spark
     {: .navgroup id="help"}
     ts_determine_active_kernel_number.md
     ts_spark_script_updated.md
+    ts_spark_212_updates.md
     ts_faq_res-ent-plan.md
     ts_index.md
 
