@@ -26,7 +26,7 @@ the power of Apache Spark. The service offering includes the following:
 
   - **Apache Spark** for data processing at scale
 
-    **Note:** To migrate to Spark 2.1 and learn what you need to update in your Spark 1.6 applications, see [Migrating from Spark 1.6 to Spark 2.1](./migration_to_spark21.html).
+    **Note:** If you want to migrate to Spark 2.1 and learn what you need to update in your Spark 1.6 applications, see [Migrating from Spark 1.6 to Spark 2.1](./migration_to_spark21.html).
   - **spark-submit** for batch processing with your own applications
   - **Spark Interactive API** for creating non-notebook web clients that
     can provision and use Jupyter kernels
