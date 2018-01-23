@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2018-01-22"
 
 ---
 
@@ -27,13 +27,13 @@ Run the spark-submit.sh script with the `file://`  identifier. For example:
    ~/spark-submit.sh \
    --vcap ~/vcap.json \
    --deploy-mode cluster \
-   --conf spark.service.spark_version=1.6 \
+   --conf spark.service.spark_version=2.1 \
    --files /my/path/to/local/TwoWords.txt \
    --class org.apache.spark.examples.JavaWordCount \
-   ~/spark-examples_2.10-1.6.0.jar file://TwoWords.txt
+   ~/spark-examples_2.11-2.1.2.jar file://TwoWords.txt
 ```
 
-The local file `/my/path/to/local/TwoWords.txt` is uploaded to the tenant's space. When `spark-examples_2.10-1.6.0.jar` runs, it is passed the absolute path to TwoWords.txt as a parameter.
+The local file `/my/path/to/local/TwoWords.txt` is uploaded to the tenant's space. When `spark-examples_2.11-2.1.2.jar` runs, it is passed the absolute path to TwoWords.txt as a parameter.
 
 If you use the Analytics for Apache Spark File Transfer service to upload a file before running the spark-submit.sh script, you must specify the URL path segment `my/path/to/remote/` in both the curl command
 and the spark-submit.sh script.
@@ -45,7 +45,7 @@ For example, upload the file using the curl command:
     -u s024-ad54206e4b441f-42a9cf195d79:6865d083-06b6-4028-84c1-4a54645d187f \
     -H "X-Spark-service-instance-id: c7b01e91-3d75-4a1e-a024-ad54206e4b44" \
     --data-binary "@/my/path/to/local/TwoWords.txt" \
-    https://169.54.219.20/tenant/data/my/path/to/remote/TwoWords.txt
+    https://spark.bluemix.net/tenant/data/my/path/to/remote/TwoWords.txt
 ```
 
 Then run the spark-submit.sh script:
@@ -54,7 +54,7 @@ Then run the spark-submit.sh script:
    ~/spark-submit.sh \
    --vcap ~/vcap.json \
    --deploy-mode cluster \
-   --conf spark.service.spark_version=1.6 \
+   --conf spark.service.spark_version=2.1 \
    --class org.apache.spark.examples.JavaWordCount \
-   ~/spark-examples_2.10-1.6.0.jar file://my/path/to/remote/TwoWords.txt
+   ~/spark-examples_2.11-2.1.2.jar file://my/path/to/remote/TwoWords.txt
 ```

@@ -16,6 +16,10 @@ Apache Spark
     index.md
 
     {: .topicgroup}
+    Migrating from Spark 1.6
+        migrating_to_spark21.md
+
+    {: .topicgroup}
     Using Cloud Object Storage (COS API)
         cloud_object_storage.md
 
@@ -29,7 +33,6 @@ Apache Spark
     Using spark-submit
         using_spark-submit.md
         spark-submit_properties.md
-        spark_app_example.md
         file_path_example.md
         spark_environment_example.md
         spark_submit_example.md

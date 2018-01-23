@@ -15,22 +15,15 @@ lastupdated: "2017-09-21"
 
 # Example: Creating a Spark application
 
-Learn how to create a Spark application that uses the SparkPi.scala
-sample code shipped with spark-1.6.3-bin-hadoop2.6.tgz package.
+Learn how to create a Spark application that uses the SparkPi.scala sample code shipped with the spark-2.1.2-bin-hadoop2.7.tgz package.
 
-Sample Scala code is included in the spark-1.6.3-bin-hadoop2.6.tgz
+Sample Scala code is included in the spark-2.1.2-bin-hadoop2.7.tgz
 package, which you can download from
-[here](https://www.apache.org/dist/spark/spark-1.6.3/spark-1.6.3-bin-hadoop2.6.tgz "(Opens in a new tab or window)").
+[here](https://www.apache.org/dist/spark/spark-2.1.2/spark-2.1.2-bin-hadoop2.7.tgz "(Opens in a new tab or window)").
 
-While you create and test your application, you might want to run
-several tests that use the Analytics for Apache Spark environment. In
-that case, you can upload files or JAR files as needed by using file
-transfer commands and environment variables. See [Example: Optional file
-transfer and environment configuration](./spark_environment_example.html).
+While you create and test your application, you might want to run several tests that use the Analytics for Apache Spark environment. In that case, you can upload files or JAR files as needed by using file transfer commands and environment variables. See [Example: Optional file transfer and  environment configuration](./spark_environment_example.html).
 
-1.  Determine if you already have the Scala compiler installed by
-    running the following command: `sbt help`. If the Scala compiler is
-    not installed, follow the instructions on the Scala website at
+1.  Determine if you already have the Scala compiler installed by running the following command: `sbt help`. If the Scala compiler is not installed, follow the instructions on the Scala website at
     [http://www.scala-sbt.org/release/tutorial/Installing-sbt-on-Linux.html](http://www.scala-sbt.org/release/tutorial/Installing-sbt-on-Linux.html "(Opens in a new tab or window)").
 
 2.  Copy the sample Scala application to a local workspace. For example:
@@ -47,13 +40,16 @@ transfer and environment configuration](./spark_environment_example.html).
     ```
     name := "SparkPi"
 
-      version := "1.0"
+  version := "1.0"
 
-      scalaVersion := "2.10.4"
+  scalaVersion := "2.10.4"
 
-      libraryDependencies += "org.apache.spark" %% "spark-core" % "1.6.0"
+  libraryDependencies += "org.apache.spark" %% "spark-core" % "2.1.2"
 
-      resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
+  libraryDependencies += "org.apache.spark" %% "spark-sql" % "2.1.2"
+
+  resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
+
     ```
 
     Important: The blank lines are required.
@@ -75,9 +71,9 @@ transfer and environment configuration](./spark_environment_example.html).
     +-- project
     |   +-- build.properties
     +-- src
-    +-- main
-    +-- scala
-        +-- SparkPi.scala
+    |   +-- main
+    |      +-- scala
+    |         +-- SparkPi.scala
     ```
 
 6.  Build the JAR file. For example, run the following commands:

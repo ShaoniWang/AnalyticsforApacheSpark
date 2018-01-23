@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-09-21"
+lastupdated: "2018-01-21"
 
 ---
 
@@ -15,23 +15,16 @@ lastupdated: "2017-09-21"
 
 # Running a Spark application using the spark-submit.sh script
 
-You can bring your own Apache Spark application and run it on the
-Analytics for Apache Spark service.
+You can bring your own Apache Spark application and run it on the Analytics for Apache Spark service.
 
-Running your own Apache Spark application on the Analytics for Apache
-Spark service lets you take advantage of powerful on-demand processing
-in the cloud. And you can load your own data into an object store in
+Running your own Apache Spark application on the Analytics for Apache Spark service lets you take advantage of powerful on-demand processing in the cloud. And you can load your own data into an object store in
 {{site.data.keyword.Bluemix_notm}} for fast, cost-effective access.
 
-**Tip:** Follow this procedure when your application JAR file is stable and
-no more testing is required. If you are still developing and testing
-your application, see the procedures in [Example: Running a Spark
-application with optional parameters](./spark_submit_example.html) and [Example: Optional file transfer and environment configuration](./spark_environment_example.html).
+**Tip:** Follow this procedure when your application JAR file is stable and no more testing is required. If you are still developing and testing your application, see the procedures in [Example: Running a Spark application with optional parameters](./spark_submit_example.html) and [Example: Optional file transfer and environment configuration](./spark_environment_example.html).
 
 The spark-submit.sh script performs the following functions:
 
-  - Runs the Apache Spark spark-submit command with the provided
-    parameters.
+  - Runs the Apache Spark spark-submit command with the provided parameters.
   - Uploads JAR files and the application JAR file to the Spark cluster.
   - Calls the Spark master with the path to the application file.
   - Periodically checks the Spark master for job status.
@@ -41,32 +34,25 @@ The spark-submit.sh script performs the following functions:
 
 To run a Spark application using the spark-submit.sh script:
 
-1.  Create your application. Be sure to test and debug your application
-    locally before submitting it to the Analytics for Apache Spark
-    service with the spark-submit.sh script. For more information see
-    [Example: Creating a Spark application](./spark_app_example.html).
+1.  Create your application. Be sure to test and debug your application locally before submitting it to the Analytics for Apache Spark service with the spark-submit.sh script.
 
 2.  Create an instance of the Analytics for Apache Spark service on {{site.data.keyword.Bluemix_notm}}, and record the credentials from the Service Credentials page.
 
-3.  Copy the service credentials from your Spark instance to a file
-    named vcap.json in the directory where you plan to run the
-    spark-submit.sh script. For example:
+3.  Copy the service credentials from your Spark instance to a file named vcap.json in the directory where you plan to run the spark-submit.sh script. For example:
 
     ```
     {
-        "credentials": {
-        "tenant_id": "s1a9-7f40d9344b951f-42a9cf195d79",
-        "tenant_id_full": "b404510b-d17a-43d2-b1a9-7f40d9344b95_9c09a3cb-7178-43f9-9e1f-42a9cf195d79",
-        "cluster_master_url": "https://169.54.219.20:8443/",
-        "instance_id": "b404510b-d17a-43d2-b1a9-7f40d9344b95",
-        "tenant_secret": "8b2d72ad-8ac5-4927-a90c-9ca9edfad124",
-        "plan":"ibm.SparkService.PayGoLite"
-      }
-    }
-    ```
+    "credentials": {
+    "tenant_id": "sc25-25d50c60825bb9-6778e4a7c897",
+    "tenant_id_full": "45ad773d-cca9-466a-9c25-25d50c60825b_44e5202e-e9c5-4bc1-b4b9-6778e4a7c897",
+    "cluster_master_url": "https://spark.bluemix.net",
+    "tenant_secret": "55bc1eff-64d8-459a-939a-45b2a5b3894d",
+    "instance_id": "45ad773d-cca9-466a-9c25-25d50c60825b",
+    "plan": "ibm.SparkService.PayGoPersonal"
+  }
+}    ```
 
-    **Restriction:** If you run your application on a Analytics for Apache
-    Spark service instance that was provisioned for working on notebooks
+    **Restriction:** If you run your application on a Analytics for Apache Spark service instance that was provisioned for working on notebooks
     with an {{site.data.keyword.objectstoragefull}} instance and you want to use a different Object Storage account with the service instance, do not use `spark` as the configname in the Swift URI
     ("swift2d://containername.configname/filename.csv").
 
@@ -82,12 +68,11 @@ To run a Spark application using the spark-submit.sh script:
 
     ```
     ./spark-submit.sh \
-    --vcap ./vcap.json \
-    --deploy-mode cluster \
-    --conf spark.service.spark_version=1.6 \
-    --class org.apache.spark.examples.SparkPi \
-    spark-examples-1.6.0-hadoop2.6.0.jar
-    file://spark-submit_20160305165113.log
+   --vcap ./vcap.json \
+   --deploy-mode cluster \
+   --conf spark.service.spark_version=2.1 \
+   --class org.apache.spark.examples.SparkPi \
+   sparkpi_2.10-1.0.jar
     ```
 
     The generated log file lists the steps taken by the spark-submit.sh
@@ -98,23 +83,21 @@ To run a Spark application using the spark-submit.sh script:
     script with the `--status` parameter. For example:
 
     ```
-    ./spark-submit.sh  
-     --vcap ./vcap.json \
-     --conf spark.service.spark_version=1.6 \
-     --status driver--20160322155455-0085-189c0f50-3621-4465-ab51-7d162be4f6a3
+    ./spark-submit.sh \
+ --vcap ./vcap.json \
+ --conf spark.service.spark_version=2.1 \
+ --status driver-20180117092338-0726-99a44999-f636-46ea-b7f2-b63d530e89e0
     ```
 
-    The status of the running job is queried continuously until the job
-    status indicates `finished`, `error`, or `failed`. You can use CTRL-C to stop the running job with status polling. Selecting `Yes` cancels the job on the cluster immediately. Selecting `No` enables you to select either `Yes` to stop polling and return for further user action, or `No` to continue running your job and polling the status until the job finishes.
+    The status of the running job is queried continuously until the job status indicates `finished`, `error`, or `failed`. You can use CTRL-C to stop the running job with status polling. Selecting `Yes` cancels the job on the cluster immediately. Selecting `No` enables you to select either `Yes` to stop polling and return for further user action, or `No` to continue running your job and polling the status until the job finishes.
 
-    You can cancel a running job by running the spark-submit.sh script
-    with the `--kill` parameter. For example:
+    You can cancel a running job by running the spark-submit.sh script with the `--kill` parameter. For example:
 
     ```
-    ./spark-submit.sh  
-     --vcap ./vcap.json \
-     --conf spark.service.spark_version=1.6 \
-     --kill driver--20160322155455-0085-189c0f50-3621-4465-ab51-7d162be4f6a3
+    ./spark-submit.sh \
+ --vcap ./vcap.json \
+ --conf spark.service.spark_version=2.1 \
+ --kill driver-20180117092338-0726-99a44999-f636-46ea-b7f2-b63d530e89e0
     ```
 
     You can find the submission ID (driver value) in the stdout log
@@ -126,33 +109,29 @@ To run a Spark application using the spark-submit.sh script:
 
 ## Results
 
-Log files stdout and stderr are written to the cluster. The log file
-names include a timestamp to identify each file. The timestamp is
-identical for all output from each time you run the spark-submit.sh
-script. For example: stdout_1458677079521707955 or
-stderr_1458677079521707955.
+Log files are written locally with a timestamp to identify each file. The timestamp is identical for all output from each time you run the spark-submit.sh script. For example: stdout_1458677079521707955 or stderr_1458677079521707955.
 
-You can access the stdout log file on the cluster by running the
-following command:
+The log files are also available on the cluster.  You can access the stdout log file on the cluster by running the following command:
 
 ```
- curl \
-   -X GET \
-   -u <tenant_id>:<tenant_secret> \
-   -H 'X-Spark-service-instance-id: <instance_id>' \
-   https://169.54.219.20/tenant/data/workdir/<submission-id>/stdout
-
+curl \
+ -X GET \
+ -u <tenant_id>:<tenant_secret> \
+ -H 'X-Spark-service-instance-id: <instance_id>' \
+ https://spark.bluemix.net/tenant/data/workdir/<submission-id>/stdout
 ```
 
 For example:
 
 ```
 curl \
-   -X GET \
-   -u s1a9-7f40d9344b951f-42a9cf195d79:8b2d72ad-8ac5-4927-a90c-9ca9edfad124 \
-   -H 'X-Spark-service-instance-id: b404510b-d17a-43d2-b1a9-7f40d9344b95'\
-   https://169.54.219.20/tenant/data/workdir/driver-20160322155455-0085-189c0f50-3621-4465-ab51-7d162be4f6a3/stdout
+  -X GET \
+ -u sc25-25d50c60825bb9-6778e4a7c897:55bc1eff-64d8-459a-939a-45b2a5b3894d \
+ -H 'X-Spark-service-instance-id: 45ad773d-cca9-466a-9c25-25d50c60825b' \
+ https://spark.bluemix.net/tenant/data/workdir/driver-20180117092338-0726-99a44999-f636-46ea-b7f2-b63d530e89e0/stdout
 ```
+
+The stderr log file can be accessed similarly, by replacing `stdout` by `stderr`.
 
 ## What to do next
 

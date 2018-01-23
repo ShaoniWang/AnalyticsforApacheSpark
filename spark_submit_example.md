@@ -100,16 +100,15 @@ Properties and variables for the spark-submit.sh script.
      /usr/local/spark-cli/sbin/spark-submit.sh \
         --vcap ~/vcap.json \
         --deploy-mode cluster \
-        --conf spark.service.spark_version=1.6 \
+        --conf spark.service.spark_version=2.1 \
         --class org.apache.spark.examples.SparkPi \
-        my/path/to/remote/sparkpi_2.10-1.0.jar file://spark-submit_20160305165113.log
+        sparkpi_2.10-1.0.jar
     ```
 
-5.  View the results by using the stdout command. For example:
+5.  View the results by using the cat command. For example:
 
     ```
-    cat stdout
-    # no extra config
-    # load default config from : /usr/local/src/spark160master/spark/profile/notebook
-    # Pi is roughly 3.14nnn
+    cat stdout_1458677079521707955
+no extra configuration defined
+Pi is roughly 3.141060
     ```
