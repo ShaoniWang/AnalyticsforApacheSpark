@@ -16,8 +16,9 @@ Apache Spark
     index.md
 
     {: .topicgroup}
-    Migrating from Spark 1.6
+    Migrating to Spark 2.1
         migrating_to_spark21.md
+        migrating_2.0_to2.1.2.md
 
     {: .topicgroup}
     Using Cloud Object Storage (COS API)
