@@ -19,7 +19,7 @@ Follow the instructions in the following sections to start using Spartk 2.1.2.
 
 ## Using Spark through IBM Watson Studio
 
-In {{site.data.keyword.DSX_short}}, you can select which Spark service to  use when your notebooks are run. For information on how to switch the Spark service of a  notebook, see [Change the Spark service used by a notebook](https://dataplatform.ibm.com/docs/content/analyze-data/change-spark-service.html?context=wdp).
+In {{site.data.keyword.DSX_short}}, you can select which Spark service to use when your notebooks are run. For information on how to switch the Spark service of a notebook, see [Change the Spark service used by a notebook](https://dataplatform.ibm.com/docs/content/analyze-data/change-spark-service.html?context=wdp).
 
 ## Using the `spark-submit.sh`  script
 
