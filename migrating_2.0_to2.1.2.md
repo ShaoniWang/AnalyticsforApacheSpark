@@ -15,7 +15,7 @@ lastupdated: "2018-02-26"
 
 When you upgrade from using Spark 2.0 to Spark 2.1.2, you might need to modify the code in your applications. Refer to the following [documentation](./ts_spark_212_updates.html#what-you-need-to-consider-when-upgrading-to-spark-2-1-2) to learn about what to consider when upgrading your applications to run in Spark 2.1.2.
 
-Follow the instructions in the following sections to start using Spartk 2.1.2.
+Follow the instructions in the following sections to start using Spark 2.1.2.
 
 ## Using Spark through IBM Watson Studio
 
