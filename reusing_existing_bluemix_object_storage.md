@@ -45,7 +45,7 @@ To use the data in an existing Object Storage instance on {{site.data.keyword.Bl
     ```
     `sc` is the SparkContext instance.
 
-    **Note:** You cannot use the `--user` option in pip install commands in IBM Analytics Engine.
+    <!-- **Note:** You cannot use the `--user` option in pip install commands in IBM Analytics Engine.-->
 
 3.  Load data from the existing Object Storage as follows:
 

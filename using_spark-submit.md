@@ -30,8 +30,6 @@ The spark-submit.sh script performs the following functions:
   - Periodically checks the Spark master for job status.
   - Downloads the job stdout and stderr files to your local file system.
 
-**Restriction:**
-
 To run a Spark application using the spark-submit.sh script:
 
 1.  Create your application. Be sure to test and debug your application locally before submitting it to the Analytics for Apache Spark service with the spark-submit.sh script.

@@ -69,7 +69,7 @@ To transfer files and configure the environment:
 
     In this example, the variables are:
 
-      - **SS\_APP\_JAR\_UPLOAD=**   
+      - **SS\_APP\_MAIN\_UPLOAD=**   
         The default value is true, in which case the application JAR
         file is uploaded to the cluster when you run the spark-submit.sh
         script. Set the value to false if you already uploaded the
