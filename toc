@@ -1,7 +1,7 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="AnalyticsforApacheSpark" audience="service" href="/docs/services/AnalyticsforApacheSpark/index.html"}
+{: .toc subcollection="AnalyticsforApacheSpark" audience="service" arm="377" href="/docs/services/AnalyticsforApacheSpark/index.html"}
 Apache Spark
 
     {: .navgroup id="learn"}
