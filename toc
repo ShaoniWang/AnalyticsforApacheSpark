@@ -32,12 +32,6 @@ Apache Spark
         cloud_object_storage.md
 
     {: .topicgroup}
-    Using Cloud Object Storage (Swift API)
-        using_object_storage.md
-        reusing_existing_bluemix_object_storage.md
-        ReusingObjectStorageOnExternalSoftLayer.md
-
-    {: .topicgroup}
     Using spark-submit
         using_spark-submit.md
         spark-submit_properties.md
