@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-09-21"
+  years: 2017, 2018
+lastupdated: "2018-11-15"
 
 ---
 
@@ -76,7 +76,7 @@ To create a sample application that runs on a Linux system:
     jupyter.startNewKernel({
         baseUrl:'https:'+ url,
         wsUrl:'wss:'+ url,
-        name:'python2-spark20',
+        name:'python2-spark21',
         ajaxSettings: ajaxSettings
     })
 
