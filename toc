@@ -1,15 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="AnalyticsforApacheSpark" audience="service" arm="377" href="/docs/services/AnalyticsforApacheSpark/index.html"}
+{: .toc subcollection="AnalyticsforApacheSpark" audience="service" href="/docs/services/AnalyticsforApacheSpark/index.html" path="services/AnalyticsforApacheSpark"}
 Apache Spark
 
     {:navgroup: .navgroup}
     {:topicgroup: .topicgroup}
     {:download .download}
-
-    {: .toc subcollection="overview" audience="platform" arm="377" href="/docs/overview/ibm-cloud.html"}
-    Getting started with IBM Cloud
 
     {: .navgroup id="learn"}
     about_apache_spark.md
